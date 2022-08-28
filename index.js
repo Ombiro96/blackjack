@@ -2,7 +2,7 @@
 let cliffM=document.getElementById("cliff")
 let firstCard=9
 let secondCard=3
-let card=[firstCard, secondCard]
+let cards=[firstCard, secondCard]
 let sum=firstCard + secondCard
 let hasBlackJack = false
 let isAlive=true
@@ -20,7 +20,7 @@ function startGame(){
 }
 function renderGame(){
 sumEl.textContent = "Sum: " + sum
-cardEl.textContent=card[0] + " " + card[1]
+cardEl.textContent="Cards: " + cards[0] + " " + cards[1]
 if(sum < 21){
     //still in running
     message="Do you want to draw another card?"
@@ -41,5 +41,6 @@ messageEl.textContent=message
 function newCard(){
     let thirdCard=9
     sum+=thirdCard
+    cards.push(thirdCard)
     renderGame()
 }
