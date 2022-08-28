@@ -32,5 +32,5 @@ else
 }
 messageEl.textContent=message
 sumEl.textContent+=sum
-cardEl.textContent+=firstCard+secondCard
+cardEl.textContent+=firstCard + " " +secondCard
 }
