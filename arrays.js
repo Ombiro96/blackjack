@@ -17,12 +17,32 @@
 // console.log(messages)
 // messages.pop()
 // console.log(messages)
-let randomNumber=0
-function rollDice(){
-    randomNumber=Math.floor(Math.random()*6)+1;
-    return randomNumber//we have to return the number
-}
-for(let i=0; i<20; i++){   
-  console.log(rollDice())
-}
+// let randomNumber=0
+// function rollDice(){
+//     randomNumber=Math.floor(Math.random()*6)+1;
+//     return randomNumber//we have to return the number
+// }
+// for(let i=0; i<20; i++){   
+//   console.log(rollDice())
+// }
+//Logical operators AND OR
 
+// let likesDocumentaries=false
+// let likesStartups=true
+
+// if(likesDocumentaries === true || likesStartups === true){
+//   recommendMovies()
+// }
+
+// function recommendMovies(){
+//   console.log("Hey, check out this new film we think you will like")
+// 
+
+//obects
+let castle= {
+  listings: "Naivasha bluh bluh",
+  price: 456,
+  images: ["img/castle.png", "img/castle2.png"]
+}
+console.log(castle.listings)
+console.log(castle["images"])

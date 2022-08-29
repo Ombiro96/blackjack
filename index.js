@@ -1,5 +1,6 @@
 //the two variables should be between 10 and 2
 let cliffM=document.getElementById("cliff")
+let playerEl=document.getElementById("player-el")
 let cards=[]
 let sum=0
 let hasBlackJack = false
@@ -9,6 +10,11 @@ cliffM.innerText+=" by Clifford"
 let messageEl=document.getElementById("message-el")
 let sumEl=document.getElementById("sum-el")
 let cardEl=document.getElementById("card-el")
+let player={
+    name: "Clifford Ombiro Mwenda ",
+    chips: 4500
+}
+playerEl.textContent=player.name + ": Kshs." + player.chips
 //console.log(sum)
 //>21 losing
 //21 winning
@@ -58,8 +64,10 @@ else
 messageEl.textContent=message
 }
 function newCard(){
+    if(isAlive === true && hasBlackJack === false){
     let thirdCard=getRandomCard()
     sum+=thirdCard
     cards.push(thirdCard)
     renderGame()
+    }
 }
