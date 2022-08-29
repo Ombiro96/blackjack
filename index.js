@@ -1,11 +1,9 @@
 //the two variables should be between 10 and 2
 let cliffM=document.getElementById("cliff")
-let firstCard=9
-let secondCard=3
-let cards=[firstCard, secondCard]
-let sum=firstCard + secondCard
+let cards=[]
+let sum=0
 let hasBlackJack = false
-let isAlive=true
+let isAlive=false
 let message=""
 cliffM.innerText+=" by Clifford"
 let messageEl=document.getElementById("message-el")
@@ -15,12 +13,33 @@ let cardEl=document.getElementById("card-el")
 //>21 losing
 //21 winning
 //<21 still in the running
+function getRandomCard(){
+    let randomCard=Math.floor(Math.random()*13+1)
+    if(randomCard===1){
+        return 11
+    }
+    else if(randomCard>10)
+    {
+        return 10
+    }
+    else{
+        return randomCard
+    }
+}
 function startGame(){
+    isAlive=true
+    let firstCard=getRandomCard()
+    let secondCard=getRandomCard()
+    cards=[firstCard, secondCard]
+    sum=firstCard + secondCard
     renderGame()
 }
 function renderGame(){
 sumEl.textContent = "Sum: " + sum
-cardEl.textContent="Cards: " + cards[0] + " " + cards[1]
+cardEl.textContent="Cards: "
+for(let i=0; i<cards.length; i++){
+cardEl.textContent+=cards[i]+" "
+}
 if(sum < 21){
     //still in running
     message="Do you want to draw another card?"
@@ -39,7 +58,7 @@ else
 messageEl.textContent=message
 }
 function newCard(){
-    let thirdCard=9
+    let thirdCard=getRandomCard()
     sum+=thirdCard
     cards.push(thirdCard)
     renderGame()
