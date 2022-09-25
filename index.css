@@ -1,6 +1,10 @@
-body{
+*{
+    padding: 0;
+    margin: 0;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 
     'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+body{
     color: white;
     background-color: green;
     text-align: center;
@@ -14,6 +18,8 @@ body{
 }
 p{
     font-weight: bold;
+    font-size: 2rem;
+    color: goldenrod;
 }
 img{
     height: 300px;

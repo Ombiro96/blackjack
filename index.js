@@ -7,9 +7,9 @@ let hasBlackJack = false
 let isAlive=false
 let message=""
 cliffM.innerText+=" by Clifford"
-let messageEl=document.getElementById("message-el")
-let sumEl=document.getElementById("sum-el")
-let cardEl=document.getElementById("card-el")
+let messageEl=document.querySelector("#message-el")
+let sumEl=document.querySelector("#sum-el")
+let cardEl=document.querySelector("#card-el")
 let player={
     name: "Clifford Ombiro Mwenda ",
     chips: 4500
@@ -54,6 +54,7 @@ else if(sum === 21){
     //won
     message="You've got Blackjack!"
     hasBlackJack=true
+    loadImage()
 }
 else
 {
@@ -70,4 +71,20 @@ function newCard(){
     cards.push(thirdCard)
     renderGame()
     }
+}
+function loadImage(){
+    const image=document.createElement("img")
+    image.setAttribute('src','win.png')
+    image.setAttribute('alt', 'ace of spades')
+    image.setAttribute('height', 350);
+    image.setAttribute('width', 550);
+    image.style.border='5px solid yellow';
+    image.onerror=function handleError(){
+        console.log('Image could not be loaded')
+    };
+    image.onload=function handleImageLoaded(){
+        console.log("Successful")
+    }
+    const box=document.querySelector("#box");
+    box.appendChild(image)
 }
